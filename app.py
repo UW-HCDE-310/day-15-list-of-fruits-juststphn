@@ -3,7 +3,8 @@ import keys
 app = Flask(__name__)
 @app.route("/")
 def index():
-    do_cool_things()
+    print("I print the API key here, without having it in this file: ", keys.MY_SECRET_API_KEY_1)
+    print(keys.MY_SECRET_API_KEY_2)
     fruits = [
         {"name": "apples", "quantity": 3},
         {"name": "oranges", "quantity": 2},
@@ -18,5 +19,3 @@ def index():
             
     return render_template("index.html", fruits=newfruits)
 
-def do_cool_things():
-    print("I print the API key here, without having it in this file: ", keys.MY_SECRET_API_KEY_1)
